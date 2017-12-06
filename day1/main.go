@@ -7,13 +7,13 @@ import (
 
 func main() {
 
-	sumOfSequential("1122")
-	sumOfSequential("1111")
-	sumOfSequential("1234")
-	sumOfSequential("91212129")
+	log.Println(sumOf(validDigits("1122")))
+	log.Println(sumOf(validDigits("1111")))
+	log.Println(sumOf(validDigits("1234")))
+	log.Println(sumOf(validDigits("91212129")))
 }
 
-func sumOfSequential(input string) int {
+func validDigits(input string) []int {
 
 	var digits []int
 	var last int
@@ -30,12 +30,10 @@ func sumOfSequential(input string) int {
 		digits = append(digits, last)
 	}
 
-	log.Println(digits, sumOfDigits(digits))
-
-	return 0
+	return digits
 }
 
-func sumOfDigits(digits []int) int {
+func sumOf(digits []int) int {
 
 	var total int
 	for _, v := range digits {
